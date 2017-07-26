@@ -1,5 +1,3 @@
-
-
 import java.util.Random;
 
 /**
@@ -38,7 +36,8 @@ public class MoveLeft {
             if (b[i][j] == b[i][h]) { /* b[i][j] = x, merge */
                 b[i][h] += b[i][j];
                 b[i][j] = 0;
-                score += b[i][h++];
+                score += b[i][h];
+                h = h + 1;
                 moveMade = true;
             }
             else {
@@ -47,7 +46,7 @@ public class MoveLeft {
                     b[i][j] = 0;
                 }
                 else { /* x != 0, x has reached its final value */
-                    h= h+1;
+                    h = h + 1;
                     if(h == j) {  /* no move made */
                     }
                     else {
